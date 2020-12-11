@@ -4,24 +4,58 @@ import img3 from '../../images/friends.svg'
 import img4 from '../../images/creativity.svg'
 import img5 from '../../images/info.svg'
 import img6 from '../../images/reading.svg'
+import shelf from '../../images/shelf.svg'
+import team from '../../images/dev.svg'
 
-export const infoData1 = {
+export const infoData0 = {
     lightBg: false,
     imgStart: '',
     lightTopLine: true, 
     lightText: true,
     lightTextDesc: true,
     buttonLabel: 'Get Started',
+    description: 'Officially opened in February 2004, the Library has over 10,000 registered members who have utilized the Library resources throughout the years.',
+    title: 'MYSA Mathare North Library',
+    topLine: 'Heaven on Earth to many',
+    primary: true,
+    start: false,
+    img: team,
+    alt: 'Hello World'
+}
+
+export const infoData1 = {
+    lightBg: true,
+    imgStart: 'start',
+    lightTopLine: false, 
+    lightText: false,
+    lightTextDesc: false,
+    buttonLabel: 'Get Started',
     description: 'Reading changes your life. Reading unlocks worlds unknown or forgotten, taking travelers around the world and through time. Reading helps you escape the confines of school and pursue your own education.',
     title: 'Road to knowledge',
     topLine: 'Read Books',
-    primary: true,
-    start: '',
+    primary: false,
+    start: true,
     img: img2,
     alt: 'Hello World'
 }
 
 export const infoData2 = {
+    lightBg: false,
+    imgStart: '',
+    lightTopLine: true, 
+    lightText: true,
+    lightTextDesc: true,
+    buttonLabel: 'Get Started',
+    description: 'Our Library is packed with books for all ages. Thanks to our donors-:) Ranging from Young Readers, Novels, Science, Business, Personal Growth categories & Academic books, we have everything you need.',
+    title: 'Plenty of Books',
+    topLine: 'Books',
+    primary: true,
+    start: false,
+    img: shelf,
+    alt: 'Hello World'
+}
+
+export const infoData3 = {
     lightBg: true,
     imgStart: 'start',
     lightTopLine: false, 
@@ -37,7 +71,7 @@ export const infoData2 = {
     alt: 'Hello World'
 }
 
-export const infoData3 = {
+export const infoData4 = {
     lightBg: false,
     imgStart: '',
     lightTopLine: true, 
@@ -53,7 +87,7 @@ export const infoData3 = {
     alt: 'Hello World'
 }
 
-export const infoData4 = {
+export const infoData5 = {
     lightBg: true,
     imgStart: 'start',
     lightTopLine: false, 
@@ -69,7 +103,7 @@ export const infoData4 = {
     alt: 'Hello World'
 }
 
-export const infoData5 = {
+export const infoData6 = {
     lightBg: false,
     imgStart: '',
     lightTopLine: true, 
@@ -80,23 +114,7 @@ export const infoData5 = {
     title: 'Collaborate with others',
     topLine: 'Collaborate',
     primary: true,
-    start: '',
+    start: false,
     img: img5,
-    alt: 'Hello World'
-}
-
-export const infoData6 = {
-    lightBg: true,
-    imgStart: 'start',
-    lightTopLine: false, 
-    lightText: false,
-    lightTextDesc: false,
-    buttonLabel: 'Get Started',
-    description: 'Adding FUN to learning creates the best educational experience possible.',
-    title: 'Reading is Fun',
-    topLine: 'Have Fun',
-    primary: false,
-    start: '',
-    img: img6,
     alt: 'Hello World'
 }

@@ -30,7 +30,7 @@ export const InfoColumn = styled.div`
     `
 
 export const TextWrapper = styled.div`
-    max-width: 540px;
+    max-width: 600px;
     padding: 0 0 60px 0;
 
     @media(max-width: 768px){
@@ -49,13 +49,13 @@ export const TopLine = styled.div`
 
 export const Title = styled.h1`
     margin-bottom: 24px;
-    font-size: 48px;
+    font-size: 38px;
     line-height: 1.1;
     color: ${({ lightText }) => (lightText) ? '#f7f8fa' : '#1c2237'};
     `
 
 export const SubTitle = styled.p`
-    max-width: 440px;
+    max-width: 500px;
     margin-bottom: 35px;
     font-size: 18px;
     line-height: 24px;

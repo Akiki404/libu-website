@@ -1,7 +1,7 @@
 import react from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
-import { Navbar } from './components'
+import { Navbar, Footer } from './components'
 import { Home, Alumni, Blog } from './pages'
 
 import GlobalStyle from './globalStyles'
@@ -18,6 +18,7 @@ function App() {
           <Route path='/alumni' exact component={Alumni} />
           <Route path='/blog' exact component={Blog} />
         </Switch>
+        <Footer />
       </Router>
     </>
   );

@@ -13,6 +13,7 @@ export const PostCard = styled.div`
 export const Img = styled.img`
     width: 100%;
     height: 150px;
+    margin-bottom: 1rem;
 `
 
 export const CardHeader = styled.div`
@@ -31,11 +32,12 @@ export const PostLink = styled(Link)`
     &:hover {
         color: #101522;
         transition: .3s ease;
+        font-size: 16.2px;
     }
 `
 
 export const CardBody = styled.div`
-    padding: 1rem;
+    padding: .5rem 1rem;
 `
 
 export const CardTitle = styled.h4`
@@ -51,5 +53,5 @@ export const CardDate = styled.p`
 `
 export const CardDesc = styled.p`
     font-size: 14px;
-    line-height: 24px;
+    line-height: 20px;
 `

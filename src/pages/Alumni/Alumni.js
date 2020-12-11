@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Alumnus from './Alumnus/Alumnus'
+import { Alumnus } from '../../components'
 import {
     alumnusData1,
     alumnusData2,

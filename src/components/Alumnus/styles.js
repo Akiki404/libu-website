@@ -43,6 +43,7 @@ export const CardLink = styled(Link)`
     &:hover {
         color: #101522;
         transition: .3s ease;
+        font-size: 16.2px;
     }
 `
 
@@ -55,5 +56,6 @@ export const CardOccupation = styled.h5`
 `
 
 export const CardDesc = styled.p`
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 18px;
 `

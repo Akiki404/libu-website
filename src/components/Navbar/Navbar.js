@@ -40,6 +40,9 @@ const Navbar = () => {
                                 <NavLinks to='/'>Home</NavLinks> 
                             </NavItem>
                             <NavItem>
+                                <NavLinks to='/events'>Events</NavLinks> 
+                            </NavItem>
+                            <NavItem>
                                 <NavLinks to='/alumni'>Alumni</NavLinks> 
                             </NavItem>
                             <NavItem>

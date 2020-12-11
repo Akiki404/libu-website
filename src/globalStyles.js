@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import styled, { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -20,5 +22,19 @@ export const Container = styled.div`
         padding: 0 30px;
     }
     `
+ 
+export const Anchor = styled(Link)`
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: #045762;
+
+    &:hover {
+        color: #101522;
+        font-size: 16.2px;
+    }
+ `
 
 export default GlobalStyle

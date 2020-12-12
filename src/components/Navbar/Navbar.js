@@ -10,7 +10,7 @@ import {
     MobileIcon,
     NavLogo,
     NavMenu,
-    NavLinks,
+    NavLink,
     NavItem,
 }
 from './styles'
@@ -37,19 +37,19 @@ const Navbar = () => {
 
                         <NavMenu onClick={handleClick} click={click}>
                             <NavItem>
-                                <NavLinks to='/'>Home</NavLinks> 
+                                <NavLink to='/'>Home</NavLink> 
                             </NavItem>
                             <NavItem>
-                                <NavLinks to='/events'>Events</NavLinks> 
+                                <NavLink to='/events'>Events</NavLink> 
                             </NavItem>
                             <NavItem>
-                                <NavLinks to='/alumni'>Alumni</NavLinks> 
+                                <NavLink to='/alumni'>Alumni</NavLink> 
                             </NavItem>
                             <NavItem>
-                                <NavLinks to='/bdadg'>DramaGroup</NavLinks> 
+                                <NavLink to='/bdadg'>DramaGroup</NavLink> 
                             </NavItem>
                             <NavItem>
-                                <NavLinks to='/blog'>Blog</NavLinks> 
+                                <NavLink to='/blog'>Blog</NavLink> 
                             </NavItem>
                         </NavMenu>
                     </NavbarContainer>

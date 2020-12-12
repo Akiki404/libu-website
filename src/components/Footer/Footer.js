@@ -71,7 +71,7 @@ const Footer = () => {
                     </FooterSection> 
                     
                     <CopyRight>
-                        <Copy>&copy; MYSA Mathare North Library</Copy>
+                        <Copy>&copy; MYSA Mathare North Library 2020</Copy>
                     </CopyRight>
                 </Container>
             </FooterSec>            

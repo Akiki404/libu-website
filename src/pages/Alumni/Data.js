@@ -1,11 +1,10 @@
 import avatar1 from '../../images/avatar-male.svg'
 import avatar2 from '../../images/avatar-female.svg'
-import prof from '../../images/prof.jpg'
 
 export const alumnusData1 = {
-    img: prof,
-    name: 'Alex Kimeu',
-    education: 'Bsc. IT ~ Maseno University',
+    img: avatar1,
+    name: 'Eugiene Ambaka',
+    education: 'Bsc. Marine ~ Kenyatta University',
     occupation: 'Software Developer',
     desc: 'The world breaks everyone, & afterwards, many are strong at the broken places.'
 }
@@ -45,8 +44,8 @@ export const alumnusData5 = {
 export const alumnusData6 = {
     img: avatar1,
     name: 'John Oremo',
-    education: 'BCom ~ Chuka University',
-    occupation: 'Software Developer',
+    education: 'BCOM ~ Chuka University',
+    occupation: 'Accountant',
     desc: 'The world breaks everyone, & afterwards, many are strong at the broken places.'
 }
 

@@ -61,4 +61,23 @@ export const DramaContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
+    
+    @media(max-width: 900px){
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media(max-width: 700px){
+        grid-template-columns: 1fr;
+    }
+`
+
+export const ActivitiesHeader = styled.div`
+    display: flex;
+    justify-content: center;
+    text-align: center;
+`
+
+export const Heading = styled.h3`
+    font-size: 30px;
+    margin: 1rem 0;
 `

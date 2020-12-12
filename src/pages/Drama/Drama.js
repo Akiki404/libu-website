@@ -10,6 +10,8 @@ import {
     Title,
     SubTitle, 
     ActivitiesSection,
+    ActivitiesHeader,
+    Heading,
     ActivityLinks,
     Button,
     DramaContainer
@@ -40,6 +42,9 @@ const Drama = () => {
                 </DramaHeader>
 
                     <ActivitiesSection>
+                        <ActivitiesHeader>
+                            <Heading>Our Activities</Heading>
+                        </ActivitiesHeader>
                         <ActivityLinks>
                             <Button>Indoors<FaAngleRight /></Button>
                             <Button>Academics<FaAngleRight /></Button>

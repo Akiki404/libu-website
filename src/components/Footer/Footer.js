@@ -60,7 +60,7 @@ const Footer = () => {
                         </Posts>
 
                         <Events>
-                            <Title>Our Coming Events</Title>
+                            <Title>Coming Events</Title>
                             <EventsBody>
                                 <EventTitle>End year party</EventTitle>
                                 <EventTitle>End year party</EventTitle>

@@ -4,6 +4,10 @@ export const InfoSection = styled.div`
     color: #fff;
     padding: 160px 0;
     background: ${({ lightBg }) => (lightBg ? '#fff' : '#101522')};
+
+    @media(max-width: 768px){
+        padding: 80px 0;
+    } 
 `
 
 export const InfoRow = styled.div`
@@ -24,8 +28,8 @@ export const InfoColumn = styled.div`
     @media(max-width: 768px){
         display: flex;
         justify-content: center;
-        flex-basis: 100%;
         max-width: 100%;
+        flex-basis: 100%;
     }
     `
 
@@ -56,7 +60,7 @@ export const Title = styled.h1`
 
 export const SubTitle = styled.p`
     max-width: 500px;
-    margin-bottom: 35px;
+    margin-bottom: 10px;
     font-size: 18px;
     line-height: 24px;
     color: ${({ lightTextDesc }) => (lightTextDesc) ? '#a9b3c1' : '#1c2237'};

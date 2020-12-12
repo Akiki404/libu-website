@@ -3,9 +3,8 @@ import img2 from '../../images/road.svg'
 import img3 from '../../images/friends.svg'
 import img4 from '../../images/creativity.svg'
 import img5 from '../../images/info.svg'
-import img6 from '../../images/reading.svg'
 import shelf from '../../images/shelf.svg'
-import team from '../../images/dev.svg'
+import libu from '../../images/libu1.jpg'
 
 export const infoData0 = {
     lightBg: false,
@@ -16,10 +15,10 @@ export const infoData0 = {
     buttonLabel: 'Get Started',
     description: 'Officially opened in February 2004, the Library has over 10,000 registered members who have utilized the Library resources throughout the years.',
     title: 'MYSA Mathare North Library',
-    topLine: 'Heaven on Earth to many',
+    topLine: "Book Haven",
     primary: true,
     start: false,
-    img: team,
+    img: libu,
     alt: 'Hello World'
 }
 

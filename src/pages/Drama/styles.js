@@ -33,9 +33,13 @@ export const ActivitiesSection = styled.section`
 `
 
 export const ActivityLinks = styled.div`
+    display: flex;
+    justify-content: center;
 `
 
 export const Button = styled(Link)`
+    display: flex;
+    align-items: center;
     padding: .4rem .8rem;
     background-color: #101522;
     color: #fff;

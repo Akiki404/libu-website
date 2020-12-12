@@ -1,5 +1,6 @@
 import React from 'react'
 import { Activity } from '../../components'
+import { FaAngleRight } from 'react-icons/fa'
 
 import { Container } from '../../globalStyles'
 
@@ -40,9 +41,9 @@ const Drama = () => {
 
                     <ActivitiesSection>
                         <ActivityLinks>
-                            <Button>Indoors</Button>
-                            <Button>Academics</Button>
-                            <Button>Community</Button>
+                            <Button>Indoors<FaAngleRight /></Button>
+                            <Button>Academics<FaAngleRight /></Button>
+                            <Button>Community<FaAngleRight /></Button>
                         </ActivityLinks>
                     </ActivitiesSection>    
 

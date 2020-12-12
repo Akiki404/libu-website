@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const PostCard = styled.div`
+export const ActivityCard = styled.div`
     border: 1px solid #f4f4f2;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
@@ -22,7 +22,7 @@ export const CardHeader = styled.div`
     padding: 0 1rem;
 `
 
-export const PostLink = styled(Link)`
+export const ActivityLink = styled(Link)`
     color: #03506f;
     text-decoration: none;
     display: flex;
@@ -54,12 +54,4 @@ export const CardDate = styled.p`
 export const CardDesc = styled.p`
     font-size: 14px;
     line-height: 20px;
-`
-
-export const CardFooter = styled.div`
-    padding: 0 1rem .5rem 1rem;
-`
-
-export const Author = styled.div`
-    font-size: small;
 `

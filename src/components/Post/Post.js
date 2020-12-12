@@ -11,14 +11,17 @@ import {
     CardTitle,
     PostLink,
     CardDate,
-    CardDesc
+    CardDesc,
+    CardFooter,
+    Author
 } from './styles'
 
 const Post = ({
     img,
     title, 
     date, 
-    content
+    content, 
+    author
 }) => {
     return (
         <>
@@ -35,6 +38,9 @@ const Post = ({
                 <CardBody>
                     <CardDesc>{content}</CardDesc>
                 </CardBody>
+                <CardFooter>
+                    <Author>Author: { author }</Author>
+                </CardFooter>
             </PostCard>            
         </>
     )

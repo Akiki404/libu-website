@@ -24,6 +24,7 @@ export const SubTitle = styled.h3`
 
 export const PartnersContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     text-align: center;
 `

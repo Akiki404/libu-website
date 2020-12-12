@@ -11,7 +11,15 @@ import {
     SocialIcon,
     Location,
     Text,
-    SubText
+    SubText,
+    Posts,
+    PostTitle,
+    PostsBody,
+    Events, 
+    EventsBody, 
+    EventTitle,
+    CopyRight,
+    Copy
 } from './styles'
 
 const Footer = () => {
@@ -40,7 +48,31 @@ const Footer = () => {
                             <Text>Mathare North Area 4,</Text>
                             <SubText>Off Thika Road</SubText>
                         </Location>
-                    </FooterSection>                                        
+
+                        <Posts>
+                            <Title>Latest Posts</Title>
+                            <PostsBody>
+                                <PostTitle>Read Books</PostTitle>
+                                <PostTitle>Read Books</PostTitle>
+                                <PostTitle>Read Books</PostTitle>
+                                <PostTitle>Read Books</PostTitle>
+                            </PostsBody>                            
+                        </Posts>
+
+                        <Events>
+                            <Title>Our Coming Events</Title>
+                            <EventsBody>
+                                <EventTitle>End year party</EventTitle>
+                                <EventTitle>End year party</EventTitle>
+                                <EventTitle>End year party</EventTitle>
+                                <EventTitle>End year party</EventTitle>
+                            </EventsBody>
+                        </Events>
+                    </FooterSection> 
+                    
+                    <CopyRight>
+                        <Copy>&copy; MYSA Mathare North Library</Copy>
+                    </CopyRight>
                 </Container>
             </FooterSec>            
         </>

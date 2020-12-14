@@ -25,6 +25,7 @@ export const Social = styled.div`
 
 export const Title = styled.h4`
     margin-bottom: 1rem;    
+    color: #fc6e20;
 `
 
 export const SocialIcons = styled.div`
@@ -37,7 +38,7 @@ display: flex;
 justify-content: center;
 text-align: center;
 align-items: center;
-color: #fff;
+color: #ffba00;
 font-size: 30px;
 
 &:not(:last-child){
@@ -58,10 +59,12 @@ export const Location = styled.div`
 
 export const Text = styled.p`
     font-size: 16px;
+    color: #ffba00;
 `
 
 export const SubText = styled.p`
     font-size: 14px;
+    color: #ffba00;
 `
 
 export const Posts = styled.div`
@@ -85,7 +88,7 @@ export const EventsBody = styled.div`
 `
 
 export const PostTitle = styled(Link)`
-    color: #fff;
+    color: #ffba00;
     text-decoration: none;
 
     &:hover {
@@ -95,7 +98,7 @@ export const PostTitle = styled(Link)`
 `
 
 export const EventTitle = styled(Link)`
-    color: #fff;
+    color: #ffba00;
     text-decoration: none;
 
     &:hover {

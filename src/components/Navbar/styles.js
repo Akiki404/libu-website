@@ -26,7 +26,7 @@ export const NavbarContainer = styled(Container)`
     `;
 
 export const NavLogo = styled(Link)`
-    color: #ffffff;
+    color: #ffba00;
     justify-self: flex-start;
     cursor: pointer;
     text-decoration: none;
@@ -36,6 +36,7 @@ export const NavLogo = styled(Link)`
     `
 export const NavIcon = styled(FaBookReader)`
     margin-right: .5rem;
+    color: #ffba00 !important;
     `    
 
 export const MobileIcon = styled.div`
@@ -77,11 +78,11 @@ export const NavItem = styled.li`
     border-bottom: 2px solid transparent;
 
     &:hover {
-        border-bottom: 2px solid #4b59f7;
+        border-bottom: 2px solid #ffba00;
     }
 
     @media(max-width: 960px) {
-        width: 100%auto;
+        width: 100%;
 
         &:hover {
             border: none;
@@ -90,7 +91,7 @@ export const NavItem = styled.li`
     `;
 
 export const NavLink = styled(Link)`
-    color: #ffffff;
+    color: #ffba00;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -100,6 +101,7 @@ export const NavLink = styled(Link)`
     @media(max-width: 960px) {
         text-align: center;
         padding: 2rem;
+        justify-content: center;
 
         &:hover {
             color: #4559f7;

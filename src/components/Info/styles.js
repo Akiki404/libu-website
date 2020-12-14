@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const InfoSection = styled.div`
-    color: #fff;
-    padding: 160px 0;
-    background: ${({ lightBg }) => (lightBg ? '#fff' : '#101522')};
+    /* color: #fff; */
+    padding: 100px 0;
+    background: ${({ lightBg }) => (lightBg ? '#fff' : '#0c3b2e')};
 
     @media(max-width: 768px){
         padding: 80px 0;
@@ -48,14 +48,14 @@ export const TopLine = styled.div`
     font-weight: 700;
     letter-spacing: 1.4px;
     margin-bottom: 16px;
-    color: ${({ lightTopLine }) => (lightTopLine) ? '#a9b3c1' : '#4b59f7'};
+    color: ${({ lightTopLine }) => (lightTopLine) ? '#fc6e20' : '#0c3b2e'};
     `
 
 export const Title = styled.h1`
     margin-bottom: 24px;
     font-size: 38px;
     line-height: 1.1;
-    color: ${({ lightText }) => (lightText) ? '#f7f8fa' : '#1c2237'};
+    color: ${({ lightText }) => (lightText) ? '#ffba00' : '#101522'};
     `
 
 export const SubTitle = styled.p`
@@ -63,7 +63,7 @@ export const SubTitle = styled.p`
     margin-bottom: 10px;
     font-size: 18px;
     line-height: 24px;
-    color: ${({ lightTextDesc }) => (lightTextDesc) ? '#a9b3c1' : '#1c2237'};
+    color: ${({ lightTextDesc }) => (lightTextDesc) ? '#ffffff' : '#1c2237'};
 `
 
 export const ImgWrapper = styled.div`

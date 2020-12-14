@@ -29,11 +29,10 @@ export const Anchor = styled(Link)`
     justify-content: center;
     text-align: center;
     align-items: center;
-    color: #045762;
+    color: #101522;
 
     &:hover {
-        color: #101522;
-        font-size: 16.2px;
+        color: #fc6e20;
     }
  `
 

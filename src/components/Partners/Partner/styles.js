@@ -13,10 +13,10 @@ export const ImgWrapper = styled.div`
 `
 
 export const Img = styled.img`
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 `
-export const Title = styled.h3`
-    font-size: 16px;
+export const Title = styled.h5`
+    font-size: 12px;
     line-height: 1.1;
-`
+    `

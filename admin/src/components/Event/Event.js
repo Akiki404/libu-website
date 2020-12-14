@@ -20,7 +20,7 @@ const Event = ({ title, date, content }) => {
                 <CardHeader>
                     <CardTitle>
                         <EventLink>
-                            {title}<FaAngleRight />
+                            {title}
                         </EventLink>
                     </CardTitle>
                     <CardDate>Date: {date.toString()}</CardDate>

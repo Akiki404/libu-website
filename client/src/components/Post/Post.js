@@ -1,8 +1,6 @@
 import React from 'react'
 import moment from 'moment'
 
-import { FaAngleRight } from 'react-icons/fa'
-
 import {
     PostCard,
     Img,
@@ -17,23 +15,23 @@ import {
 } from './styles'
 
 const Post = ({
-    img,
+    image,
     title, 
-    date, 
+    createdAt, 
     content, 
     author
 }) => {
     return (
         <>
             <PostCard>
-                <Img src={img} />
+                <Img src={image} />
                 <CardHeader>
                     <CardTitle>
                         <PostLink>
-                            {title}<FaAngleRight />
+                            {title}
                         </PostLink>
                     </CardTitle>
-                    <CardDate>{moment(date).fromNow()}</CardDate>
+                    <CardDate>{moment(createdAt).fromNow()}</CardDate>
                     </CardHeader>
                 <CardBody>
                     <CardDesc>{content}</CardDesc>

@@ -29,8 +29,8 @@ export const CardBody = styled.div`
     text-align: center;
 `
 
-export const CardName = styled.h3`
-    font-size: 16px;
+export const CardName = styled.h4`
+    font-size: 14px;
 `
 
 export const CardLink = styled(Link)`
@@ -43,16 +43,18 @@ export const CardLink = styled(Link)`
     &:hover {
         color: #101522;
         transition: .3s ease;
-        font-size: 16.2px;
+        font-size: 14.2px;
     }
 `
 
-export const CardEducation = styled.h4`
-    font-size: 15px;
+export const CardEducation = styled.p`
+    font-size: 14px;
+    font-weight: bold;
 `
 
-export const CardOccupation = styled.h5`
-    font-size: 14px;
+export const CardOccupation = styled.p`
+    font-size: 12px;
+    font-weight: bold;
 `
 
 export const CardDesc = styled.p`

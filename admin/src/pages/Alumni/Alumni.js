@@ -1,52 +1,64 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
+import AlumniForm from '../../components/Forms/AlumniForm'
+
+import { CircularProgress } from '@material-ui/core'
+
+import { FaPlusSquare } from 'react-icons/fa'
 import { Alumnus } from '../../components'
-import {
-    alumnusData1,
-    alumnusData2,
-    alumnusData3,
-    alumnusData4,
-    alumnusData5,
-    alumnusData6,
-    alumnusData7,
-    alumnusData8
-} from './Data'
 
-import { Container } from '../../globalStyles'
+import { Container, Loader } from '../../globalStyles'
 
 import {
     AlumniWrapper,
     AlumniHeader,
     Title,
-    SubTitle,
+    AlumniAdd,
     AlumniSection
 } from './styles'
 
 
 const Alumni = () => {
+
+    const [alumniForm, setAlumniForm] = useState(false)
+    const [alumni, setAlumni] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/alumni/')
+            .then(response => setAlumni(response.data))
+            .catch((error) => console.log(error.message))
+    }, [alumni])
+
+    const click = () => {
+        setAlumniForm(true)
+    }
+
     return (
         <>
-            <AlumniWrapper>
-                <Container>
-                    <AlumniHeader>
-                        <Title>Our Alumni</Title>
-                        <SubTitle>Take a look at our Alumni soaring high</SubTitle>
-                    </AlumniHeader>
-                    
-                    <AlumniSection>
-                        <Alumnus {...alumnusData1} />
-                        <Alumnus {...alumnusData2} />
-                        <Alumnus {...alumnusData3} />
-                        <Alumnus {...alumnusData4} />
-                        <Alumnus {...alumnusData5} />
-                        <Alumnus {...alumnusData6} />
-                        <Alumnus {...alumnusData7} />
-                        <Alumnus {...alumnusData8} />
-                    </AlumniSection>
-                </Container>
-            </AlumniWrapper>  
+            {
+                alumniForm ? <AlumniForm /> :
+                    <AlumniWrapper>
+                        <Container>
+                            <AlumniHeader>
+                                <Title>Alumni</Title>
+                                <AlumniAdd onClick={click}>
+                                    <FaPlusSquare />
+                                </AlumniAdd>
+                            </AlumniHeader>
+                            {!alumni.length ? <Loader> <CircularProgress /> </Loader> : (
+                                <AlumniSection>
+                                    {alumni.map((alumnus) =>
+                                        <Alumnus {...alumnus} />
+                                    )}
+                                </AlumniSection>
+                            )}
+                        </Container>
+                    </AlumniWrapper>
+            }
         </>
     )
 }
+    
 
 export default Alumni

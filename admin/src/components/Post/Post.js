@@ -19,23 +19,23 @@ import {
 import { CTAEdit, CTADanger } from '../../globalStyles'
 
 const Post = ({
-    img,
+    image,
     title, 
-    date, 
+    createdAt, 
     content, 
     author
 }) => {
     return (
         <>
             <PostCard>
-                <Img src={img} />
+                <Img src={image} />
                 <CardHeader>
                     <CardTitle>
                         <PostLink>
                             {title}
                         </PostLink>
                     </CardTitle>
-                    <CardDate>{moment(date).fromNow()}</CardDate>
+                    <CardDate>{moment(createdAt).fromNow()}</CardDate>
                     </CardHeader>
                 <CardBody>
                     <CardDesc>{content}</CardDesc>

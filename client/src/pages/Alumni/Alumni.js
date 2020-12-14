@@ -1,18 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+
+import { CircularProgress } from '@material-ui/core'
 
 import { Alumnus } from '../../components'
-import {
-    alumnusData1,
-    alumnusData2,
-    alumnusData3,
-    alumnusData4,
-    alumnusData5,
-    alumnusData6,
-    alumnusData7,
-    alumnusData8
-} from './Data'
 
-import { Container } from '../../globalStyles'
+
+import { Container, Loader } from '../../globalStyles'
 
 import {
     AlumniWrapper,
@@ -24,6 +18,17 @@ import {
 
 
 const Alumni = () => {
+
+    const [alumni, setAlumni ] = useState([])
+
+    useEffect(() => {
+        const fetchAlumni = async () => {
+            await axios.get('http://localhost:5000/alumni')
+                .then(response => setAlumni(response.data))
+        }
+
+        fetchAlumni()
+    }, [alumni])
     return (
         <>
             <AlumniWrapper>
@@ -33,16 +38,15 @@ const Alumni = () => {
                         <SubTitle>Take a look at our Alumni soaring high</SubTitle>
                     </AlumniHeader>
                     
-                    <AlumniSection>
-                        <Alumnus {...alumnusData1} />
-                        <Alumnus {...alumnusData2} />
-                        <Alumnus {...alumnusData3} />
-                        <Alumnus {...alumnusData4} />
-                        <Alumnus {...alumnusData5} />
-                        <Alumnus {...alumnusData6} />
-                        <Alumnus {...alumnusData7} />
-                        <Alumnus {...alumnusData8} />
-                    </AlumniSection>
+                    {!alumni.length ? <Loader> <CircularProgress /></Loader> : (
+                        <AlumniSection>
+                            {
+                                alumni.map((alumnus) => 
+                                    <Alumnus key={alumnus._id} {...alumnus} />
+                                )
+                            }
+                        </AlumniSection>
+                    )}
                 </Container>
             </AlumniWrapper>  
         </>

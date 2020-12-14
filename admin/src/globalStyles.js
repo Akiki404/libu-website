@@ -56,4 +56,11 @@ export const CTAEdit = styled(Link)`
     }    
 `
 
+
+export const Loader = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+`
+
 export default GlobalStyle

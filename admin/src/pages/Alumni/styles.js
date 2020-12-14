@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const AlumniWrapper = styled.section`
     padding: 60px 0;
@@ -7,15 +8,12 @@ export const AlumniWrapper = styled.section`
 
 export const AlumniHeader = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: space-between; 
 `
 
 export const Title = styled.h1`
     margin-bottom: 24px;
-    font-size: 48px;
+    font-size: 24px;
     line-height: 1.1;
     color: ${({ lightText }) => (lightText) ? '#f7f8fa' : '#1c2237'};
 `
@@ -39,5 +37,14 @@ export const AlumniSection = styled.div`
 
     @media(max-width: 700px){
         grid-template-columns: 1fr;
+    }
+`
+
+export const AlumniAdd = styled(Link)`
+    font-size: 30px;
+    color: #101522;    
+
+    &:hover {
+        color: #ffba00;
     }
 `

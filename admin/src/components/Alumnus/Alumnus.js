@@ -14,25 +14,25 @@ import {
 } from './styles'
 
 const Alumnus = ({
-    img, 
+    image, 
     name, 
-    education, 
+    certificate, 
     occupation,
-    desc
+    tagline
 }) => {
     return (
         <>
             <AlumnusCard>
                 <CardImg>
-                <Img src={img} />
+                <Img src={image} />
                 </CardImg>
                 <CardBody>
                     <CardName>
-                        <CardLink>{name}<FaAngleRight /></CardLink>
+                        <CardLink>{name}</CardLink>
                     </CardName>
-                    <CardEducation>{education}</CardEducation>
+                    <CardEducation>{certificate}</CardEducation>
                     <CardOccupation>{occupation}</CardOccupation>
-                    <CardDesc>{desc}</CardDesc>
+                    <CardDesc>{tagline}</CardDesc>
                 </CardBody>
             </AlumnusCard>    
         </>

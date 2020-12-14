@@ -39,9 +39,3 @@ export const PostAdd = styled(Link)`
         color: #ffba00;
     }
 `
-
-export const Loader = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-`

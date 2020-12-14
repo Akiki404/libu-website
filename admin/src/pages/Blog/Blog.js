@@ -7,7 +7,7 @@ import axios from 'axios'
 
 import { FaPlusSquare } from 'react-icons/fa'
 
-import { Container } from '../../globalStyles'
+import { Container, Loader } from '../../globalStyles'
 
 import {
     BlogSection,
@@ -15,7 +15,6 @@ import {
     Title,    
     BlogContainer,
     PostAdd,
-    Loader
 } from './styles'
 
 

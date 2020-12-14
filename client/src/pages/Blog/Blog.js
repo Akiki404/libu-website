@@ -19,11 +19,13 @@ const Blog = () => {
     const [ posts, setPosts ] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/posts')
-            .then(response => setPosts(response.data))
-    }, [posts])
+        const fetchPosts = async () => {
+            await axios.get('http://localhost:5000/posts')
+                .then(response => setPosts(response.data))
+        }
 
-    console.log(posts)
+        fetchPosts()
+    }, [posts])
 
     return (
         <>
@@ -37,7 +39,7 @@ const Blog = () => {
                         <BlogContainer>
                             {
                                 posts.map((post) => 
-                                    <Post key={post._id} {...posts} />
+                                    <Post key={post._id} {...post} />
                                 )
                             }
                                                

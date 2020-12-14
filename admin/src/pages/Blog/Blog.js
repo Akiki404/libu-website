@@ -1,27 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Post, PostForm } from '../../components'
+
+import { CircularProgress } from '@material-ui/core'
+
+import axios from 'axios'
 
 import { FaPlusSquare } from 'react-icons/fa'
 
 import { Container } from '../../globalStyles'
 
 import {
-    postData1,
-    postData2,
-    postData3,
-    postData4,
-    postData5,
-    postData6
-} from './Data'
-
-import {
     BlogSection,
     BlogHeader,
     Title,    
     BlogContainer,
-    PostAdd
+    PostAdd,
+    Loader
 } from './styles'
-
 
 
 const Blog = () => {
@@ -31,8 +26,16 @@ const Blog = () => {
     }
 
     const [postForm, setPostForm] = useState(false)
+    const [posts, setPosts] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/posts/')
+            .then(response => setPosts(response.data))
+            .catch((error) => console.log(error.message))
+    }, [posts])
 
     return (
+        !posts.length ? <Loader> <CircularProgress /> </Loader> : (
         <>
             {
                 postForm ? <PostForm /> :
@@ -45,17 +48,15 @@ const Blog = () => {
                                 </PostAdd>
                             </BlogHeader>
                             <BlogContainer>
-                                <Post {...postData1} />
-                                <Post {...postData2} />
-                                <Post {...postData3} />
-                                <Post {...postData4} />
-                                <Post {...postData5} />
-                                <Post {...postData6} />
+                                {posts.map((post) =>
+                                    <Post {...post} />
+                                )}                                
                             </BlogContainer>
                         </Container>
                     </BlogSection>
             }
         </>
+        )
     )
 }
 

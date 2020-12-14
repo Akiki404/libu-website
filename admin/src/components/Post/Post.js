@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-import { FaAngleRight, FaEdit, FaTrash } from 'react-icons/fa'
+import { FaEdit, FaTrash } from 'react-icons/fa'
 
 import {
     PostCard,
@@ -32,7 +32,7 @@ const Post = ({
                 <CardHeader>
                     <CardTitle>
                         <PostLink>
-                            {title}<FaAngleRight />
+                            {title}
                         </PostLink>
                     </CardTitle>
                     <CardDate>{moment(date).fromNow()}</CardDate>

@@ -36,4 +36,10 @@ export const Anchor = styled(Link)`
     }
  `
 
+export const Loader = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+`
+
 export default GlobalStyle

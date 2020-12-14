@@ -1,26 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { CircularProgress } from '@material-ui/core'
+
 import { Post } from '../../components'
 
-import { Container } from '../../globalStyles'
-
-import {
-    postData1,
-    postData2,
-    postData3,
-    postData4,
-    postData5,
-    postData6
-} from './Data'
+import { Container, Loader } from '../../globalStyles'
 
 import {
     BlogSection,
     BlogHeader,
     Title,
     SubTitle,
-    BlogContainer
+    BlogContainer,
 } from './styles'
 
 const Blog = () => {
+
+    const [ posts, setPosts ] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/posts')
+            .then(response => setPosts(response.data))
+    }, [posts])
+
+    console.log(posts)
+
     return (
         <>
             <BlogSection>
@@ -29,14 +33,16 @@ const Blog = () => {
                        <Title>From Our Blog</Title>
                         <SubTitle>Amazing articles from our writers</SubTitle>
                     </BlogHeader>
-                    <BlogContainer>
-                        <Post {...postData1} />
-                        <Post {...postData2} />
-                        <Post {...postData3} />
-                        <Post {...postData4} />
-                        <Post {...postData5} />
-                        <Post {...postData6} />
-                    </BlogContainer>
+                    {!posts.length ? <Loader> <CircularProgress /></Loader> : (
+                        <BlogContainer>
+                            {
+                                posts.map((post) => 
+                                    <Post key={post._id} {...posts} />
+                                )
+                            }
+                                               
+                        </BlogContainer>
+                    )}
                 </Container>
             </BlogSection>
         </>

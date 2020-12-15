@@ -28,7 +28,7 @@ const Alumnus = ({
                 </CardImg>
                 <CardBody>
                     <CardName>
-                        <CardLink>{name}<FaAngleRight /></CardLink>
+                        <CardLink>{name}</CardLink>
                     </CardName>
                     <CardEducation>{certificate}</CardEducation>
                     <CardOccupation>{occupation}</CardOccupation>

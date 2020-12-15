@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { FaAngleRight } from 'react-icons/fa'
 
 import {
     EventCard,
@@ -13,20 +12,20 @@ import {
 } from './styles'
 
 
-const Event = ({ title, date, content }) => {
+const Event = ({ event }) => {
     return (
         <>
             <EventCard>
                 <CardHeader>
                     <CardTitle>
                         <EventLink>
-                            {title}
+                            {event.title}
                         </EventLink>
                     </CardTitle>
-                    <CardDate>Date: {date.toString()}</CardDate>
+                    <CardDate>Date: {event.date.toString()}</CardDate>
                     </CardHeader>
                 <CardBody>
-                    <CardDesc>{content}</CardDesc>
+                    <CardDesc>{event.content}</CardDesc>
                 </CardBody>
             </EventCard>
         </>

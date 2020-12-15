@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const EventsSection = styled.section`
     padding: 60px 0;
@@ -6,15 +7,23 @@ export const EventsSection = styled.section`
 
 export const EventsHeader = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: space-between;
+`
+
+export const EventAdd = styled.div`
+    font-size: 20px;
+    cursor: pointer;
+    font-size: 30px;
+    color: #101522;    
+
+    &:hover {
+        color: #ffba00;
+    }
 `
 
 export const Title = styled.h1`
     margin-bottom: 24px;
-    font-size: 48px;
+    font-size: 30px;
     line-height: 1.1;
     color: ${({ lightText }) => (lightText) ? '#f7f8fa' : '#1c2237'};
 `

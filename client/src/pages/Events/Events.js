@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+
 import { Event } from '../../components'
 
-import { Container } from '../../globalStyles'
+import { Container, Loader } from '../../globalStyles'
 
 import {
     EventsSection,
@@ -11,16 +13,19 @@ import {
     EventContainer,
 } from './styles'
 
-import {
-    eventData1,
-    eventData2,
-    eventData3,
-    eventData4,
-    eventData5,
-    eventData6
-} from './Data'
+import { CircularProgress } from '@material-ui/core'
 
 const Events = () => {
+    const [events, setEvents] = useState([])
+
+    useEffect(() => {
+        const fetchEvents = async () => {
+            await axios.get('http://localhost:5000/events')
+                .then(response => setEvents(response.data))
+        }
+        fetchEvents()
+    }, [events])
+
     return (
         <>
             <EventsSection>
@@ -30,12 +35,9 @@ const Events = () => {
                         <SubTitle>Check out our coming events</SubTitle>
                     </EventsHeader>
                     <EventContainer>
-                        <Event {...eventData1} />
-                        <Event {...eventData2} />
-                        <Event {...eventData3} />
-                        <Event {...eventData4} />
-                        <Event {...eventData5} />
-                        <Event {...eventData6} />
+                        {!events.length ? <Loader><CircularProgress /></Loader> : (
+                            events.map((event) => <Event event={event} />)                            
+                        )}                       
                     </EventContainer>
                 </Container>
             </EventsSection>            

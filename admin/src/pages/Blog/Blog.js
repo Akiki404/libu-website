@@ -34,7 +34,6 @@ const Blog = () => {
     }, [posts])
 
     return (
-        !posts.length ? <Loader> <CircularProgress /> </Loader> : (
         <>
             {
                 postForm ? <PostForm /> :
@@ -46,16 +45,18 @@ const Blog = () => {
                                     <FaPlusSquare />
                                 </PostAdd>
                             </BlogHeader>
-                            <BlogContainer>
-                                {posts.map((post) =>
-                                    <Post {...post} />
-                                )}                                
-                            </BlogContainer>
+                            {!posts.length ? <Loader> <CircularProgress /> </Loader> : (
+                                <BlogContainer>
+                                    {posts.map((post) =>
+                                        <Post {...post} />
+                                    )}
+                                </BlogContainer>
+                            )}
                         </Container>
                     </BlogSection>
             }
         </>
-        )
+        
     )
 }
 

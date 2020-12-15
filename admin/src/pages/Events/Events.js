@@ -1,44 +1,62 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+
 import { Event } from '../../components'
 
-import { Container } from '../../globalStyles'
+import { Container, Loader } from '../../globalStyles'
+
+import EventForm from '../../components/Forms/EventForm'
 
 import {
     EventsSection,
     EventsHeader,
     Title,
-    SubTitle,
     EventContainer,
+    EventAdd
 } from './styles'
+import { CircularProgress } from '@material-ui/core'
+import { FaPlusSquare } from 'react-icons/fa'
 
-import {
-    eventData1,
-    eventData2,
-    eventData3,
-    eventData4,
-    eventData5,
-    eventData6
-} from './Data'
+
 
 const Events = () => {
+
+    const [events, setEvents] = useState([])
+    const [eventForm, setEventForm] = useState(false)
+
+    useEffect(() => {
+        const fetchEvents = async () => {
+            await axios.get('http://localhost:5000/events')
+                .then(response => setEvents(response.data))
+        }
+        fetchEvents()
+    }, [events])
+
+    const click = () => {
+        setEventForm(true)
+    }
+
     return (
         <>
-            <EventsSection>
+            {
+                eventForm ? <EventForm /> : 
+                <EventsSection>
                 <Container>
                 <EventsHeader>
-                       <Title>Our Coming Events</Title>
-                        <SubTitle>Check out our coming events</SubTitle>
-                    </EventsHeader>
+                    <Title>Our Events</Title>
+                        <EventAdd>
+                            <FaPlusSquare onClick={ click } />
+                        </EventAdd>           
+                </EventsHeader>
                     <EventContainer>
-                        <Event {...eventData1} />
-                        <Event {...eventData2} />
-                        <Event {...eventData3} />
-                        <Event {...eventData4} />
-                        <Event {...eventData5} />
-                        <Event {...eventData6} />
+                        {!events.length ? <Loader><CircularProgress /></Loader> : (
+                            events.map((event) => <Event event={event} />)
+                        )}                        
                     </EventContainer>
                 </Container>
             </EventsSection>            
+                    
+            }
         </>
     )
 }

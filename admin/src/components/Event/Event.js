@@ -1,5 +1,7 @@
 import React from 'react'
+import { FaEdit, FaTrash } from 'react-icons/fa'
 
+import { CTAEdit, CTADanger } from '../../globalStyles'
 
 import {
     EventCard,
@@ -8,7 +10,9 @@ import {
     EventLink,
     CardDate,
     CardBody,
-    CardDesc
+    CardDesc, 
+    CardFooter,
+    Cta
 } from './styles'
 
 
@@ -27,6 +31,12 @@ const Event = ({ event }) => {
                 <CardBody>
                     <CardDesc>{event.content}</CardDesc>
                 </CardBody>
+                <CardFooter>
+                    <Cta>
+                        <CTAEdit><FaEdit /> </CTAEdit>
+                        <CTADanger><FaTrash /></CTADanger>
+                    </Cta>
+                </CardFooter>
             </EventCard>
         </>
     )

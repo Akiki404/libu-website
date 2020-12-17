@@ -9,15 +9,15 @@ import {
     Title
 } from './styles'
 
-const Partner = ({ img, name }) => {
+const Partner = ({partner}) => {
     return (
         <>
             <PartnerWrapper>
                 <ImgWrapper>
-                    <Img src={img} />
+                    <Img src={partner.logo} />
                 </ImgWrapper>
                 <Title>
-                    <Anchor href="">{name}<FaAngleRight /></Anchor>
+                    <Anchor href="">{partner.name}<FaAngleRight /></Anchor>
                 </Title>
             </PartnerWrapper>            
         </>

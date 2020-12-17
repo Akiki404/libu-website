@@ -33,7 +33,6 @@ export const NavLogo = styled(Link)`
     font-size: 2rem;
     display: flex;
     align-items: center;
-    font-weight: bold;
     `
 export const NavIcon = styled(FaUserAlt)`
     margin-right: .5rem;
@@ -98,7 +97,6 @@ export const NavLink = styled(Link)`
     text-decoration: none;
     padding: .5rem 1rem;
     height: 100%;
-    font-weight: bold;
 
     @media(max-width: 960px) {
         text-align: center;

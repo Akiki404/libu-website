@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { CircularProgress } from '@material-ui/core'
+import { Loader } from '../../globalStyles'
 
 import { Info, Partners } from '../../components'
 
@@ -10,10 +13,21 @@ import {
     infoData4,
     infoData5,
     infoData6,
-    infoData7,
 } from './Data'
 
 const Home = () => {
+
+    const [partners, setPartners] = useState([])
+
+    useEffect(() => {
+        const fetchPartners = async () => {
+            await axios.get('http://localhost:5000/partners')
+                .then(response => setPartners(response.data))
+        }
+
+        fetchPartners()
+    }, [partners])
+
     return (
         <>
             <Info {...infoData0} />
@@ -23,7 +37,11 @@ const Home = () => {
             <Info {...infoData4} />
             <Info {...infoData5} />
             <Info {...infoData6} />
-            <Partners />
+
+            {!partners.length ? <Loader><CircularProgress /></Loader> : (
+               <Partners partners={ partners}/>
+            )}
+            
         </>
     )
 }

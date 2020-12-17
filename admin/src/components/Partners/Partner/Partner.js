@@ -1,24 +1,32 @@
 import React from 'react'
-import {FaAngleRight} from 'react-icons/fa'
-import { Anchor } from '../../../globalStyles'
+import {FaAngleRight, FaEdit, FaTrash } from 'react-icons/fa'
+import { Anchor, CTADanger, CTAEdit } from '../../../globalStyles'
 
 import {
     PartnerWrapper,
     ImgWrapper,
     Img,
-    Title
+    Title,
+    CardFooter,
+    Cta
 } from './styles'
 
-const Partner = ({ img, name }) => {
+const Partner = ({partner}) => {
     return (
         <>
             <PartnerWrapper>
                 <ImgWrapper>
-                    <Img src={img} />
+                    <Img src={partner.logo} />
                 </ImgWrapper>
                 <Title>
-                    <Anchor href="">{name}<FaAngleRight /></Anchor>
+                    <Anchor href="">{partner.name}<FaAngleRight /></Anchor>
                 </Title>
+                <CardFooter>
+                    <Cta>
+                        <CTAEdit><FaEdit /> </CTAEdit>
+                        <CTADanger><FaTrash /></CTADanger>
+                    </Cta>
+                </CardFooter>
             </PartnerWrapper>            
         </>
     )

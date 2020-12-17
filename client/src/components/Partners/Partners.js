@@ -12,7 +12,7 @@ import {
     PartnersContainer
 } from './styles'
 
-const Partners = () => {
+const Partners = ({partners}) => {
     return (
         <>
             <PartnersSection>
@@ -22,10 +22,7 @@ const Partners = () => {
                         <SubTitle>Your support keeps us going</SubTitle>
                     </PartnersHeader>
                     <PartnersContainer>
-                        <Partner {...partnersData1} />
-                        <Partner {...partnersData2} />
-                        <Partner {...partnersData3} />
-                        <Partner {...partnersData4} />
+                        {partners.map((partner) => <Partner partner={partner} />)}
                     </PartnersContainer>
                 </Container>
             </PartnersSection>            

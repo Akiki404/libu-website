@@ -6,6 +6,7 @@ import cors from 'cors'
 import postsRoutes from './routes/posts.js'
 import alumniRoutes from './routes/alumni.js'
 import eventsRoutes from './routes/events.js'
+import partnersRoutes from './routes/partners.js'
 
 const app = express()
 
@@ -16,6 +17,7 @@ app.use(cors())
 app.use('/posts', postsRoutes)
 app.use('/alumni', alumniRoutes)
 app.use('/events', eventsRoutes)
+app.use('/partners', partnersRoutes)
 
 
 const PORT = process.env.PORT || 5000

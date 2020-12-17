@@ -1,34 +1,63 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Partner from './Partner/Partner'
+import PartnerForm from '../../components/Forms/PartnerForm'
 
-import { partnersData1, partnersData2, partnersData3, partnersData4 } from './Data'
-import { Container } from '../../globalStyles'
+import { FaPlusSquare } from 'react-icons/fa'
+
+import { Container, Loader } from '../../globalStyles'
 
 import {
     PartnersSection,
     PartnersHeader,
     Title,
-    SubTitle,
-    PartnersContainer
+    PartnersContainer, 
+    PartnerAdd
 } from './styles'
+import axios from 'axios'
+import { CircularProgress } from '@material-ui/core'
 
 const Partners = () => {
+
+    const [partners, setPartners] = useState([])
+    const [partnerForm, setPartnerForm] = useState(false)
+
+    const click = () => {
+        setPartnerForm(true)
+    }
+
+    useEffect(() => {
+        const fetchPartners = async () => {
+            await axios.get('http://localhost:5000/partners')
+                .then(response => setPartners(response.data))
+        }
+
+        fetchPartners()
+    }, [partners])
+
     return (
         <>
-            <PartnersSection>
+            {partnerForm ? <PartnerForm /> : (
+                <PartnersSection>
                 <Container>
                     <PartnersHeader>
-                        <Title>Our Sponsors & Partners</Title>
-                        <SubTitle>Your support keeps us going</SubTitle>
-                    </PartnersHeader>
-                    <PartnersContainer>
-                        <Partner {...partnersData1} />
-                        <Partner {...partnersData2} />
-                        <Partner {...partnersData3} />
-                        <Partner {...partnersData4} />
-                    </PartnersContainer>
-                </Container>
-            </PartnersSection>            
+                        <Title>Sponsors & Partners</Title>
+                        <PartnerAdd onClick={click}>
+                            <FaPlusSquare />
+                        </PartnerAdd>
+                        </PartnersHeader>    
+                        {
+                            !partners.length ? <Loader><CircularProgress /></Loader> : (
+                                <PartnersContainer>
+                            {partners.map((partner) => <Partner partner={ partner } />)}                            
+                        </PartnersContainer>                                
+                           ) 
+                        }    
+                                                  
+                </Container>               
+            </PartnersSection>
+
+            )}
+                        
         </>
     )
 }

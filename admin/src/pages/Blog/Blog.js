@@ -28,9 +28,11 @@ const Blog = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/posts/')
-            .then(response => setPosts(response.data))
-            .catch((error) => console.log(error.message))
+        const fetchPosts = async () => {
+            await axios.get('http://localhost:5000/posts')
+                .then(response => setPosts(response.data))
+        }
+        fetchPosts()
     }, [posts])
 
     return (

@@ -26,7 +26,7 @@ const Event = ({ event }) => {
                             {event.title}
                         </EventLink>
                     </CardTitle>
-                    <CardDate>Date: {event.date.toString()}</CardDate>
+                    <CardDate>Date: {event.date.substring(0, 10)}</CardDate>
                     </CardHeader>
                 <CardBody>
                     <CardDesc>{event.content}</CardDesc>

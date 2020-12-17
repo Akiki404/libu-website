@@ -6,7 +6,7 @@ export const getPartners = async (req, res) => {
         res.status(200).json(partners)
     } catch (error) {
         res.status(404).json({message: error.message})        
-    }
+    }  
 }
 
 export const createPartner = async (req, res) => {

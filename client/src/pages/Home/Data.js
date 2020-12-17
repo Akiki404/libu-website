@@ -1,6 +1,6 @@
 import img1 from '../../images/research.svg'
-import img2 from '../../images/road.svg'
-import img3 from '../../images/friends.svg'
+import top from '../../images/top.jpeg'
+import img3 from '../../images/libu4.jpg'
 import img4 from '../../images/creativity.svg'
 import img5 from '../../images/info.svg'
 import shelf from '../../images/shelf.svg'
@@ -18,7 +18,7 @@ export const infoData0 = {
     topLine: "Book Haven",
     primary: true,
     start: false,
-    img: libu,
+    img: img3,
     alt: 'Hello World'
 }
 
@@ -34,7 +34,7 @@ export const infoData1 = {
     topLine: 'Read Books',
     primary: false,
     start: true,
-    img: img2,
+    img: libu,
     alt: 'Hello World'
 }
 
@@ -82,7 +82,7 @@ export const infoData4 = {
     topLine: 'Interact',
     primary: true,
     start: false,
-    img: img3,
+    img: top,
     alt: 'Hello World'
 }
 

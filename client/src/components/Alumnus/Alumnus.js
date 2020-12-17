@@ -24,7 +24,7 @@ const Alumnus = ({
         <>
             <AlumnusCard>
                 <CardImg>
-                <Img src={image} />
+                <Img src={image} loading="lazy" />
                 </CardImg>
                 <CardBody>
                     <CardName>

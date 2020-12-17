@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 export const InfoSection = styled.div`
-    /* color: #fff; */
-    padding: 100px 0;
+    padding: 130px 0;
     background: ${({ lightBg }) => (lightBg ? '#fff' : '#0c3b2e')};
 
     @media(max-width: 768px){
@@ -78,5 +77,6 @@ export const Img = styled.img`
     max-width: 100%;
     vertical-align: middle;
     display: inline-block;
+    height: 350px;
     max-height: 500px;
     `

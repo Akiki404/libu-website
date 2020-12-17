@@ -68,6 +68,8 @@ const PostForm = () => {
                             variant="outlined" 
                             label="Content" 
                             fullWidth 
+                            multiline
+                            rows={12}
                             className={classes.content}
                             value={postData.content} 
                             onChange={(e) => setPostData({ ...postData, content: e.target.value })} 

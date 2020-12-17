@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 
 export const FooterSec = styled.section`
-    background: #101522;
+    background: #0c3b2e;
     padding: 7rem 0 2rem 0;
     color: #fff;
 `

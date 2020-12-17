@@ -68,6 +68,8 @@ const AlumniForm = () => {
                             variant="outlined" 
                             label="Description" 
                             fullWidth 
+                            multiline
+                            rows={10}
                             value={activityData.description} 
                             onChange={(e) => setActivityData({ ...activityData, description: e.target.value })} 
                         />

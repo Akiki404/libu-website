@@ -14,7 +14,7 @@ const Activity = ({activity}) => {
     return (
         <>
             <ActivityCard>
-                <Img src={activity.image} />
+                <Img src={activity.image} loading="lazy" />
                 <CardHeader>
                     <CardTitle>
                         <ActivityLink>

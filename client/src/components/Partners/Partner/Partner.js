@@ -14,7 +14,7 @@ const Partner = ({partner}) => {
         <>
             <PartnerWrapper>
                 <ImgWrapper>
-                    <Img src={partner.logo} />
+                    <Img src={partner.logo} loading="lazy" />
                 </ImgWrapper>
                 <Title>
                     <Anchor href="">{partner.name}<FaAngleRight /></Anchor>

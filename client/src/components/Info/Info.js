@@ -42,7 +42,7 @@ const Info = ({
 
                         <InfoColumn>
                             <ImgWrapper start={start}>
-                                <Img src={img} alt={alt} />
+                                <Img src={img} alt={alt} loading="lazy" />
                             </ImgWrapper>
                         </InfoColumn>
                     </InfoRow>

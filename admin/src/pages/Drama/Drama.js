@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { CircularProgress } from '@material-ui/core'
 import { Activity } from '../../components'
-import { FaAngleRight } from 'react-icons/fa'
+import ActivityForm from '../../components/Forms/ActivityForm'
 
-import { Container } from '../../globalStyles'
+import { FaAngleRight, FaPlusSquare } from 'react-icons/fa'
+
+import { Container, Loader } from '../../globalStyles'
 
 import {
     DramaSection,
@@ -14,22 +18,33 @@ import {
     Heading,
     ActivityLinks,
     Button,
-    DramaContainer
+    DramaContainer,
+    ActivityAdd
 } from './styles'
 
-import {
-    activityData1,
-    activityData2,
-    activityData3,
-    activityData4,
-    activityData5,
-    activityData6
-} from './Data'
 
 const Drama = () => {
+
+    const [activities, setActivities] = useState([])
+    const [activityForm, setActivityForm] = useState(false)
+
+    const click = () => {
+        setActivityForm(true)
+    }
+
+    
+    useEffect(() => {
+        const fetchActivities = async () => {
+            await axios.get('http://localhost:5000/drama-group')
+                .then(response => setActivities(response.data))
+        }
+        fetchActivities()
+    }, [activities])
+
     return (
         <>
-            <DramaSection>
+            {activityForm ? <ActivityForm /> : (
+                <DramaSection>
                 <Container>
                 <DramaHeader>
                     <Title>Big Dream Africa Drama Group</Title>
@@ -44,24 +59,27 @@ const Drama = () => {
                     <ActivitiesSection>
                         <ActivitiesHeader>
                             <Heading>Our Activities</Heading>
+                            <ActivityAdd onClick={click}>
+                                <FaPlusSquare />
+                            </ActivityAdd>
                         </ActivitiesHeader>
                         <ActivityLinks>
+                            <Button>All<FaAngleRight /></Button>
                             <Button>Indoors<FaAngleRight /></Button>
                             <Button>Academics<FaAngleRight /></Button>
                             <Button>Community<FaAngleRight /></Button>
                         </ActivityLinks>
-                    </ActivitiesSection>    
+                    </ActivitiesSection> 
+                    {!activities.length ? <Loader><CircularProgress /></Loader> : (
+                        <DramaContainer>
+                            {activities.map((activity) => <Activity activity={activity} />)}
+                        </DramaContainer>
 
-                    <DramaContainer>
-                        <Activity {...activityData1} />
-                        <Activity {...activityData2} />
-                        <Activity {...activityData3} />
-                        <Activity {...activityData4} />
-                        <Activity {...activityData5} />
-                        <Activity { ...activityData6 } />
-                    </DramaContainer>
+                    )}
+                    
                 </Container>
-            </DramaSection>            
+            </DramaSection>
+            )}            
         </>
     )
 }

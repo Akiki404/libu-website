@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { CircularProgress } from '@material-ui/core'
+
 import { Activity } from '../../components'
 import { FaAngleRight } from 'react-icons/fa'
 
-import { Container } from '../../globalStyles'
+import { Loader, Container } from '../../globalStyles'
 
 import {
     DramaSection,
@@ -27,6 +30,17 @@ import {
 } from './Data'
 
 const Drama = () => {
+
+    const [activities, setActivities] = useState([])
+
+    useEffect(() => {
+        const fetchActivities = async () => {
+            await axios.get('http://localhost:5000/drama-group')
+                .then(response => setActivities(response.data))
+        }
+        fetchActivities()
+    }, [activities])
+
     return (
         <>
             <DramaSection>
@@ -46,20 +60,19 @@ const Drama = () => {
                             <Heading>Our Activities</Heading>
                         </ActivitiesHeader>
                         <ActivityLinks>
+                            <Button>All<FaAngleRight /></Button>
                             <Button>Indoors<FaAngleRight /></Button>
                             <Button>Academics<FaAngleRight /></Button>
                             <Button>Community<FaAngleRight /></Button>
                         </ActivityLinks>
                     </ActivitiesSection>    
 
-                    <DramaContainer>
-                        <Activity {...activityData1} />
-                        <Activity {...activityData2} />
-                        <Activity {...activityData3} />
-                        <Activity {...activityData4} />
-                        <Activity {...activityData5} />
-                        <Activity { ...activityData6 } />
-                    </DramaContainer>
+                    {!activities.length ? <Loader><CircularProgress /></Loader> : (
+                        <DramaContainer>   
+                            {activities.map((activity) => <Activity activity={ activity } />)}
+                        </DramaContainer>
+                    )}
+                    
                 </Container>
             </DramaSection>            
         </>

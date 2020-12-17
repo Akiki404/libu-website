@@ -7,6 +7,7 @@ import postsRoutes from './routes/posts.js'
 import alumniRoutes from './routes/alumni.js'
 import eventsRoutes from './routes/events.js'
 import partnersRoutes from './routes/partners.js'
+import activitiesRoutes from './routes/activities.js'
 
 const app = express()
 
@@ -18,6 +19,7 @@ app.use('/posts', postsRoutes)
 app.use('/alumni', alumniRoutes)
 app.use('/events', eventsRoutes)
 app.use('/partners', partnersRoutes)
+app.use('/drama-group', activitiesRoutes)
 
 
 const PORT = process.env.PORT || 5000

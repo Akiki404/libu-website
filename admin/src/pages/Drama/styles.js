@@ -16,7 +16,7 @@ export const DramaHeader = styled.div`
 
 export const Title = styled.h1`
     margin-bottom: 24px;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 1.1;
     color: ${({ lightText }) => (lightText) ? '#f7f8fa' : '#1c2237'};
 `
@@ -73,11 +73,23 @@ export const DramaContainer = styled.div`
 
 export const ActivitiesHeader = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
 `
 
 export const Heading = styled.h3`
     font-size: 30px;
     margin: 1rem 0;
+`
+
+export const ActivityAdd = styled(Link)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+
+    &:hover {
+        color: #101522;
+        transition: .3s ease;
+    }
 `

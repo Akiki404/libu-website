@@ -1,4 +1,7 @@
 import React from 'react'
+import { FaEdit, FaTrash } from 'react-icons/fa'
+
+import { CTAEdit, CTADanger } from '../../globalStyles'
 
 import {
     ActivityCard,
@@ -7,24 +10,32 @@ import {
     CardTitle,
     ActivityLink,
     CardBody,
-    CardDesc
+    CardDesc,
+    CardFooter,
+    Cta
 } from './styles'
 
-const Activity = ({ img, title, content }) => {
+const Activity = ({activity}) => {
     return (
         <>
             <ActivityCard>
-                <Img src={img} />
+                <Img src={activity.image} />
                 <CardHeader>
                     <CardTitle>
                         <ActivityLink>
-                            {title}
+                            {activity.title}
                         </ActivityLink>
                     </CardTitle>
                     </CardHeader>
                 <CardBody>
-                    <CardDesc>{content}</CardDesc>
+                    <CardDesc>{activity.description}</CardDesc>
                 </CardBody>
+                <CardFooter>
+                    <Cta>
+                        <CTAEdit><FaEdit /> </CTAEdit>
+                        <CTADanger><FaTrash /></CTADanger>
+                    </Cta>
+                </CardFooter>
             </ActivityCard>            
         </>
     )

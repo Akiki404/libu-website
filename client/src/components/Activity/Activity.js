@@ -10,20 +10,20 @@ import {
     CardDesc
 } from './styles'
 
-const Activity = ({ img, title, content }) => {
+const Activity = ({activity}) => {
     return (
         <>
             <ActivityCard>
-                <Img src={img} />
+                <Img src={activity.image} />
                 <CardHeader>
                     <CardTitle>
                         <ActivityLink>
-                            {title}
+                            {activity.title}
                         </ActivityLink>
                     </CardTitle>
                     </CardHeader>
                 <CardBody>
-                    <CardDesc>{content}</CardDesc>
+                    <CardDesc>{activity.description}</CardDesc>
                 </CardBody>
             </ActivityCard>            
         </>

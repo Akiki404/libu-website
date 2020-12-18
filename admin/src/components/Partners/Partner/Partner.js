@@ -11,7 +11,7 @@ import {
     Cta
 } from './styles'
 
-const Partner = ({partner}) => {
+const Partner = ({partner, handleDelete}) => {
     return (
         <>
             <PartnerWrapper>
@@ -24,7 +24,7 @@ const Partner = ({partner}) => {
                 <CardFooter>
                     <Cta>
                         <CTAEdit><FaEdit /> </CTAEdit>
-                        <CTADanger><FaTrash /></CTADanger>
+                        <CTADanger onClick={() => handleDelete(partner._id)}><FaTrash /></CTADanger>
                     </Cta>
                 </CardFooter>
             </PartnerWrapper>            

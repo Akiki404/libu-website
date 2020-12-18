@@ -1,5 +1,6 @@
 import React from 'react'
-import { FaAngleRight } from 'react-icons/fa'
+import { FaEdit, FaTrash } from 'react-icons/fa'
+import { CTADanger, CTAEdit} from '../../globalStyles'
 
 import {
     AlumnusCard,
@@ -10,30 +11,32 @@ import {
     CardLink,
     CardEducation,
     CardOccupation,
-    CardDesc
+    CardDesc,
+    CardFooter,
+    Cta
 } from './styles'
 
-const Alumnus = ({
-    image, 
-    name, 
-    certificate, 
-    occupation,
-    tagline
-}) => {
+const Alumnus = ({alumnus, handleDelete}) => {
     return (
         <>
             <AlumnusCard>
                 <CardImg>
-                <Img src={image} />
+                <Img src={alumnus.image} />
                 </CardImg>
                 <CardBody>
                     <CardName>
-                        <CardLink>{name}</CardLink>
+                        <CardLink>{alumnus.name}</CardLink>
                     </CardName>
-                    <CardEducation>{certificate}</CardEducation>
-                    <CardOccupation>{occupation}</CardOccupation>
-                    <CardDesc>{tagline}</CardDesc>
+                    <CardEducation>{alumnus.certificate}</CardEducation>
+                    <CardOccupation>{alumnus.occupation}</CardOccupation>
+                    <CardDesc>{alumnus.tagline}</CardDesc>
                 </CardBody>
+                <CardFooter>
+                    <Cta>
+                        <CTAEdit><FaEdit /> </CTAEdit>
+                        <CTADanger onClick={() => { handleDelete(alumnus._id) }}><FaTrash/></CTADanger>
+                    </Cta>
+                </CardFooter>
             </AlumnusCard>    
         </>
 

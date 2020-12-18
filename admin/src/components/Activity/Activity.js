@@ -15,7 +15,7 @@ import {
     Cta
 } from './styles'
 
-const Activity = ({activity}) => {
+const Activity = ({activity, handleDelete}) => {
     return (
         <>
             <ActivityCard>
@@ -33,7 +33,7 @@ const Activity = ({activity}) => {
                 <CardFooter>
                     <Cta>
                         <CTAEdit><FaEdit /> </CTAEdit>
-                        <CTADanger><FaTrash /></CTADanger>
+                        <CTADanger onClick={() => handleDelete(activity._id)}><FaTrash /></CTADanger>
                     </Cta>
                 </CardFooter>
             </ActivityCard>            

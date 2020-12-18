@@ -25,6 +25,12 @@ const Partners = () => {
         setPartnerForm(true)
     }
 
+    const handleDelete = (id) => {
+        axios.delete(`http://localhost:5000/partners/${id}`)
+        partners.filter((partner) => partner._id !== id)
+        setPartners(partners)
+    }
+
     useEffect(() => {
         const fetchPartners = async () => {
             await axios.get('http://localhost:5000/partners')
@@ -48,7 +54,7 @@ const Partners = () => {
                         {
                             !partners.length ? <Loader><CircularProgress /></Loader> : (
                                 <PartnersContainer>
-                            {partners.map((partner) => <Partner partner={ partner } />)}                            
+                                    {partners.map((partner) => <Partner handleDelete={handleDelete} partner={ partner } />)}                            
                         </PartnersContainer>                                
                            ) 
                         }    

@@ -41,6 +41,12 @@ const Drama = () => {
         fetchActivities()
     }, [activities])
 
+    const handleDelete = (id) => {
+        axios.delete(`http://localhost:5000/drama-group/${id}`)
+        activities.filter((activity) => activity._id !== id)
+        setActivities(activities)
+    }
+
     return (
         <>
             {activityForm ? <ActivityForm /> : (
@@ -72,7 +78,7 @@ const Drama = () => {
                     </ActivitiesSection> 
                     {!activities.length ? <Loader><CircularProgress /></Loader> : (
                         <DramaContainer>
-                            {activities.map((activity) => <Activity activity={activity} />)}
+                            {activities.map((activity) => <Activity handleDelete={handleDelete} activity={activity} />)}
                         </DramaContainer>
 
                     )}

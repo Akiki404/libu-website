@@ -18,33 +18,27 @@ import {
 } from './styles'
 import { CTAEdit, CTADanger } from '../../globalStyles'
 
-const Post = ({
-    image,
-    title, 
-    createdAt, 
-    content, 
-    author
-}) => {
+const Post = ({ post, handleDelete}) => {
     return (
         <>
             <PostCard>
-                <Img src={image} />
+                <Img src={post.image} />
                 <CardHeader>
                     <CardTitle>
                         <PostLink>
-                            {title}
+                            {post.title}
                         </PostLink>
                     </CardTitle>
-                    <CardDate>{moment(createdAt).fromNow()}</CardDate>
+                    <CardDate>{moment(post.createdAt).fromNow()}</CardDate>
                     </CardHeader>
                 <CardBody>
-                    <CardDesc>{content}</CardDesc>
+                    <CardDesc>{post.content}</CardDesc>
                 </CardBody>
                 <CardFooter>
-                    <Author>Author: {author}</Author>
+                    <Author>Author: {post.author}</Author>
                     <Cta>
                         <CTAEdit><FaEdit /> </CTAEdit>
-                        <CTADanger><FaTrash /></CTADanger>
+                        <CTADanger onClick={() => handleDelete(post._id)}><FaTrash /></CTADanger>
                     </Cta>
                 </CardFooter>
             </PostCard>            

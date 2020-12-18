@@ -1,7 +1,12 @@
 import React from 'react'
+import axios from 'axios'
+
+
 import { FaEdit, FaTrash } from 'react-icons/fa'
 
 import { CTAEdit, CTADanger } from '../../globalStyles'
+
+
 
 import {
     EventCard,
@@ -15,8 +20,7 @@ import {
     Cta
 } from './styles'
 
-
-const Event = ({ event }) => {
+const Event = ({ event, handleDelete }) => {   
     return (
         <>
             <EventCard>
@@ -34,7 +38,7 @@ const Event = ({ event }) => {
                 <CardFooter>
                     <Cta>
                         <CTAEdit><FaEdit /> </CTAEdit>
-                        <CTADanger><FaTrash /></CTADanger>
+                        <CTADanger onClick={() => { handleDelete(event._id) }}><FaTrash/></CTADanger>
                     </Cta>
                 </CardFooter>
             </EventCard>

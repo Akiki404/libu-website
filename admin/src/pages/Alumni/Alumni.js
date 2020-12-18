@@ -34,6 +34,12 @@ const Alumni = () => {
         setAlumniForm(true)
     }
 
+    const handleDelete = (id) => {
+        axios.delete(`http://localhost:5000/alumni/${id}`)
+        alumni.filter((alumnus) => alumnus._id !== id)
+        setAlumni(alumni)
+    }
+
     return (
         <>
             {
@@ -49,7 +55,7 @@ const Alumni = () => {
                             {!alumni.length ? <Loader> <CircularProgress /> </Loader> : (
                                 <AlumniSection>
                                     {alumni.map((alumnus) =>
-                                        <Alumnus {...alumnus} />
+                                        <Alumnus alumnus={alumnus} handleDelete={handleDelete}/>
                                     )}
                                 </AlumniSection>
                             )}

@@ -19,3 +19,9 @@ export const createPartner = async (req, res) => {
         res.status(409).json({message: error.message})        
     }
 }
+
+export const deletePartner = async (req, res) => {
+    const { id } = req.params
+    await PartnerModel.findByIdAndDelete(id)
+    return res.json({message: 'Partner Deleted successfully'})
+}

@@ -1,4 +1,5 @@
 import EventModel from '../models/eventModel.js'
+import mongoose from 'mongoose'
 
 export const getEvents = async(req, res) => {
     try {
@@ -18,4 +19,10 @@ export const createEvent = async (req, res) => {
     } catch (error) {
         res.status(409).json({ message: error.message })        
     }
+}
+
+export const deleteEvent = async (req, res) => {
+    const { id } = req.params   
+    await EventModel.findByIdAndDelete(id)
+    return res.json({message: 'Event deleted successfully'})
 }

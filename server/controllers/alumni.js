@@ -20,3 +20,9 @@ export const createAlumni = async (req, res) => {
         res.status(409).json({ message: error.message })        
     }
 }
+
+export const deleteAlumni = async (req, res) => {
+    const { id } = req.params
+    await AlumniModel.findByIdAndDelete(id)
+    return res.json({message: 'Alumnus deleted successfully'})
+}

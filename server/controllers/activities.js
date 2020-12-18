@@ -19,3 +19,9 @@ export const createActivity = async (req, res) => {
         res.status(409).json({message: error.message})        
     }
 }
+
+export const deleteActivity = async (req, res) => {
+    const { id } = req.params
+    await ActivityModel.findByIdAndDelete(id)
+    return res.json({ message: 'Activity deleted successfully!'})
+}

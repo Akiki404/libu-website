@@ -61,3 +61,13 @@ export const CardDesc = styled.p`
     font-size: 14px;
     line-height: 18px;
 `
+
+export const CardFooter = styled.div`
+    display: flex;
+    justify-content: center;
+    padding: 0 .5rem;
+`
+
+export const Cta = styled.div`
+    display: flex;
+`

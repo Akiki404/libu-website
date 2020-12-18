@@ -20,10 +20,6 @@ import {
 
 const Blog = () => {
 
-    const click = () => {
-        setPostForm(true)
-    }
-
     const [postForm, setPostForm] = useState(false)
     const [posts, setPosts] = useState([])
 
@@ -34,6 +30,16 @@ const Blog = () => {
         }
         fetchPosts()
     }, [posts])
+
+    const click = () => {
+        setPostForm(true)
+    }
+
+    const handleDelete = (id) => {
+        axios.delete(`http://localhost:5000/posts/${id}`)
+        posts.filter((post) => post._id !== id)
+        setPosts(posts)
+    }
 
     return (
         <>
@@ -50,7 +56,7 @@ const Blog = () => {
                             {!posts.length ? <Loader> <CircularProgress /> </Loader> : (
                                 <BlogContainer>
                                     {posts.map((post) =>
-                                        <Post {...post} />
+                                        <Post post={post} handleDelete={handleDelete} />
                                     )}
                                 </BlogContainer>
                             )}

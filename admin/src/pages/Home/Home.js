@@ -10,7 +10,6 @@ import {
     infoData4,
     infoData5,
     infoData6,
-    infoData7,
 } from './Data'
 
 const Home = () => {
@@ -23,7 +22,6 @@ const Home = () => {
             <Info {...infoData4} />
             <Info {...infoData5} />
             <Info {...infoData6} />
-            <Partners />
         </>
     )
 }

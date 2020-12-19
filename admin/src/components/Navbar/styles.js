@@ -6,7 +6,7 @@ import { Container } from '../../globalStyles'
 
 
 export const Nav = styled.div`
-    background: #101522;
+    background: #0c3b2e;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -29,15 +29,16 @@ export const NavLogo = styled(Link)`
     color: #ffba00;
     justify-self: flex-start;
     cursor: pointer;
+    justify-content: center;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     `
-export const NavIcon = styled(FaUserAlt)`
-    margin-right: .5rem;
-    color: #ffba00 !important;
-    `    
+// export const NavIcon = styled(FaUserAlt)`
+//     margin-right: .5rem;
+//     color: #ffba00 !important;
+//     `    
 
 export const MobileIcon = styled.div`
     display: none;

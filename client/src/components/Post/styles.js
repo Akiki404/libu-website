@@ -10,9 +10,24 @@ export const PostCard = styled.div`
     }
 `
 
+export const ImgWrapper = styled.div`
+    max-width: 550px;
+`
+
+export const PostImgWrapper = styled.div`
+    width: 50%;
+    margin: 1rem auto;
+`
+
 export const Img = styled.img`
     width: 100%;
     height: 150px;
+    margin-bottom: 1rem;
+`
+
+export const PostImg = styled.img`
+    width: 100%;
+    height: auto;
     margin-bottom: 1rem;
 `
 
@@ -46,20 +61,35 @@ export const CardTitle = styled.h4`
     color: #0f0f0f;
 `
 
+export const Title = styled.h4`
+    font-size: 16px;
+    line-height: 1.1;
+    color: #0f0f0f;
+`
+
 export const CardDate = styled.p`
     font-size: small;
     font-size: 12px;
     color: #03506f;
 `
+
 export const CardDesc = styled.p`
     font-size: 14px;
     line-height: 20px;
 `
 
 export const CardFooter = styled.div`
+    display: flex;
+    justify-content: space-between;
     padding: 0 1rem .5rem 1rem;
 `
 
 export const Author = styled.div`
     font-size: small;
+    color: #03506f;
 `
+
+export const Cta = styled.div`
+    display: flex;
+`
+

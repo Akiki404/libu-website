@@ -6,3 +6,5 @@ export { default as Alumnus } from './Alumnus/Alumnus'
 export { default as Activity } from './Activity/Activity'
 export { default as Partners } from './Partners/Partners'
 export { default as Footer } from './Footer/Footer'
+export { default as PostDetail } from './Post/PostDetail'
+

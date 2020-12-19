@@ -27,7 +27,7 @@ const Navbar = () => {
                 <Nav>
                     <NavbarContainer>
                         <NavLogo>
-                            <NavIcon />
+                            {/* <NavIcon /> */}
                             Admin
                         </NavLogo>
 

@@ -23,6 +23,7 @@ const Events = () => {
 
     const [events, setEvents] = useState([])
     const [eventForm, setEventForm] = useState(false)
+    
 
     const handleDelete = (id) => {
         axios.delete(`http://localhost:5000/events/${id}`)
@@ -45,8 +46,7 @@ const Events = () => {
 
     return (
         <>
-            {
-                eventForm ? <EventForm /> : 
+            { eventForm ? <EventForm /> : 
                 <EventsSection>
                 <Container>
                 <EventsHeader>
@@ -57,7 +57,7 @@ const Events = () => {
                 </EventsHeader>
                     <EventContainer>
                         {!events.length ? <Loader><CircularProgress /></Loader> : (
-                            events.map((event) => <Event handleDelete={handleDelete} event={event} />)
+                                    events.map((event) => <Event handleDelete={handleDelete} event={event} />)
                         )}                        
                     </EventContainer>
                 </Container>

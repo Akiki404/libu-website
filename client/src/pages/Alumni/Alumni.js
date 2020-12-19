@@ -35,7 +35,7 @@ const Alumni = () => {
                 <Container>
                     <AlumniHeader>
                         <Title>Our Alumni</Title>
-                        <SubTitle>Take a look at our Alumni soaring high</SubTitle>
+                        <SubTitle>Though our branches grow in different directions, our roots remain one.</SubTitle>
                     </AlumniHeader>
                     
                     {!alumni.length ? <Loader> <CircularProgress /></Loader> : (

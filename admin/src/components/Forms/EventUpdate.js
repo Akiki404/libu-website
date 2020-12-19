@@ -10,7 +10,7 @@ import { Container } from '../../globalStyles'
 
 import useStyles from './styles'
 
-const EventForm = () => {
+const EventUpdate = ({event}) => {
     const classes = useStyles()
     const [eventData, setEventData] = useState({
         title: '',
@@ -42,13 +42,13 @@ const EventForm = () => {
             <Container>
                 <Paper className={classes.paper}>
                     <form autoComplete="off" noValidate onSubmit={handleSubmit} className={`${classes.root} ${classes.form}`}>
-                        <Typography variant="h4">Create Event</Typography>
+                        <Typography variant="h4">Update Event</Typography>
                         <TextField 
                             name="title" 
                             variant="outlined" 
                             label="Title" 
                             fullWidth 
-                            value={eventData.title} 
+                            value={event.title} 
                             onChange={(e) => setEventData({ ...eventData, title: e.target.value })} 
                         />
 
@@ -59,7 +59,7 @@ const EventForm = () => {
                             multiline
                             rows={7}
                             fullWidth 
-                            value={eventData.content} 
+                            value={event.content} 
                             onChange={(e) => setEventData({ ...eventData, content: e.target.value })} 
                         />
 
@@ -69,14 +69,14 @@ const EventForm = () => {
                                 variant="outlined"
                                 label="Date"
                                 fullWidth
-                                value={eventData.date}
-                                selected={eventData.date}
+                                value={event.date}
+                                selected={event.date}
                                 onChange={date => setEventData({...eventData, date})} 
                             />
                         </MuiPickersUtilsProvider>
                         
 
-                        <Button type="submit" className={classes.buttonSubmit} variant="contained" color="primary" size="large" fullWidth >Submit</Button>
+                        <Button type="submit" className={classes.buttonSubmit} variant="contained" color="primary" size="large" fullWidth >Update</Button>
                         <Button variant="contained" color="secondary" size="small" fullWidth onClick={clear}>Clear</Button>
                     </form>
                 </Paper>                
@@ -85,4 +85,4 @@ const EventForm = () => {
     )
 }
 
-export default EventForm
+export default EventUpdate

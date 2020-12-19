@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { Navbar, Partners } from './components'
+import { Navbar, Partners, PostDetail } from './components'
 import { Home, Alumni, Blog, Events, Drama } from './pages'
 
 import GlobalStyle from './globalStyles'
@@ -18,6 +18,7 @@ function App() {
           <Route path='/partners' exact component={Partners} />
           <Route path='/alumni' exact component={Alumni} />
           <Route path='/blog' exact component={Blog} />
+          <Route path='/post' exact component={PostDetail} />
           <Route path='/bdadg' exact component={Drama} />
         </Switch>
       </Router>

@@ -1,6 +1,8 @@
 import React from 'react'
 import moment from 'moment'
 
+import Truncate from 'react-truncate'
+
 import {
     PostCard,
     Img,
@@ -15,6 +17,7 @@ import {
 } from './styles'
 
 const Post = ({
+    _id,
     image,
     title, 
     createdAt, 
@@ -27,14 +30,19 @@ const Post = ({
                 <Img src={image} />
                 <CardHeader>
                     <CardTitle>
-                        <PostLink>
+                        <PostLink to={
+                            {
+                                pathname: '/post',
+                                state: _id
+                            }
+                        }>
                             {title}
                         </PostLink>
                     </CardTitle>
                     <CardDate>{moment(createdAt).fromNow()}</CardDate>
                     </CardHeader>
                 <CardBody>
-                    <CardDesc>{content}</CardDesc>
+                    <CardDesc><Truncate lines="2">{content}</Truncate>...</CardDesc>
                 </CardBody>
                 <CardFooter>
                     <Author>Author: { author }</Author>
